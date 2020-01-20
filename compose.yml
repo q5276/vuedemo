@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web: 
+    image: hub.c.163.com/library/nginx:latest
+    ports:
+      - "8080:80"
+    networks:
+      - frontend
+    volumes:
+      - "./dist:/usr/share/nginx/html"
+    deploy:
+      replicas: 3
+networks:
+  frontend:
+        
